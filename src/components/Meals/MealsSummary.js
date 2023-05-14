@@ -1,5 +1,6 @@
 import classes from "./MealsSummary.module.css";
 
+/* Doesn't even need to accept the props parameter - we won't be accepting props at any time */
 const MealsSummary = () => {
   return (
     <section className={classes.summary}>

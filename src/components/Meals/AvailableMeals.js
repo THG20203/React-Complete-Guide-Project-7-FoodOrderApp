@@ -28,10 +28,14 @@ const DUMMY_MEALS = [
 ];
 
 const AvailableMeals = () => {
+  /* keeping return statement lean -> so adding a helper const. meal return JSX element which represents
+  this item. That should be a list item of course, for moment - meal.name. Soon, we will create seperate
+  component for the meal item. */
   const mealsList = DUMMY_MEALS.map((meal) => <li>{meal.name}</li>);
 
   return (
     <section className={classes.meals}>
+      {/* Outputting meals list */}
       <ul>{mealsList}</ul>
     </section>
   );
