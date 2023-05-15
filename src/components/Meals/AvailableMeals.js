@@ -1,4 +1,5 @@
 import classes from "./AvailableMeals.module.css";
+import MealItem from "./MealItem/MealItem";
 import Card from "../UI/Card";
 
 const DUMMY_MEALS = [
@@ -30,9 +31,19 @@ const DUMMY_MEALS = [
 
 const AvailableMeals = () => {
   /* keeping return statement lean -> so adding a helper const. meal return JSX element which represents
-  this item. That should be a list item of course, for moment - meal.name. Soon, we will create seperate
-  component for the meal item. */
-  const mealsList = DUMMY_MEALS.map((meal) => <li>{meal.name}</li>);
+  this item. New can map our DUMMY_MEALS to a meal item instead of a list item. */
+  /* add a key to MealItem -> with a key of meal.id cause even dummy meal meal has an id. I will alsp pass 
+  in the name prop, because in MealItem I am accessing the name. I'm also accessing description and price,
+  so will pass in the name with meal.name, description with meal.description and the price -> with
+  meal.price. */
+  const mealsList = DUMMY_MEALS.map((meal) => (
+    <MealItem
+      key={meal.id}
+      name={meal.name}
+      description={meal.description}
+      price={meal.price}
+    />
+  ));
 
   return (
     <section className={classes.meals}>
