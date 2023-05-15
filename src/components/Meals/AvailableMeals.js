@@ -1,4 +1,5 @@
 import classes from "./AvailableMeals.module.css";
+import Card from "../UI/Card";
 
 const DUMMY_MEALS = [
   {
@@ -35,8 +36,10 @@ const AvailableMeals = () => {
 
   return (
     <section className={classes.meals}>
-      {/* Outputting meals list */}
-      <ul>{mealsList}</ul>
+      {/* Outputting meals list - want card to wrap unordered list */}
+      <Card>
+        <ul>{mealsList}</ul>
+      </Card>
     </section>
   );
 };
