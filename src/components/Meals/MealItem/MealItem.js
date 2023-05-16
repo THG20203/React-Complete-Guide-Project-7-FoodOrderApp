@@ -23,7 +23,7 @@ const MealItem = (props) => {
       <div>
         {/* second div -> render simple form which allows users to enter the amount you want to use here,
         the amount of meals you want to add to the Cart and then the add to cart button. */}
-        {/* There is an extra component going to add -> */}
+        {/* There is an extra component going to add -> outputting MealItemForm component */}
         <MealItemForm id={props.id} />
       </div>
     </li>

@@ -1,6 +1,7 @@
 import Input from "../../UI/Input";
 import classes from "./MealItemForm.module.css";
 
+/* this function will recieve some props */
 const MealItemForm = (props) => {
   return (
     <form className={classes.form}>
