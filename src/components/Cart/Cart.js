@@ -1,7 +1,10 @@
 import classes from "./Cart.module.css";
 
+/* expecting props */
 const Cart = (props) => {
+  /* cart items -> want to map cartItems to cartItems JSX elements. */
   const cartItems = (
+    /* <ul> element wrapping the mapped cartItems */
     <ul className={classes["cart-items"]}>
       {[{ id: "c1", name: "Sushi", amount: 2, price: 12.99 }].map((item) => (
         <li>{item.name}</li>
@@ -11,6 +14,7 @@ const Cart = (props) => {
 
   return (
     <div>
+      {/* cart items from above rendered here in the JSX */}
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
