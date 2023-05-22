@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 
 import classes from "./Modal.module.css";
 
+/* two seperate components -> really closely tied to the modal component and both lean, will 
+createv them in the same file. Both components recieve props because both will recieve data */
 const Backdrop = (props) => {
   return <div className={classes.backdrop} />;
 };
