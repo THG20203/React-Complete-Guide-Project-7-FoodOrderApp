@@ -29,9 +29,16 @@ function App() {
     <Fragment>
       {/* Wrapping Card in curly braces (to evaluate a dynamic expression) to render it conditionally */}
       {/* Using && to render cart if cartIsShown is truthy, and not render it if its falsy */}
-      {/* Cart will go cause initially its false */}
+      {/* Cart will go cause initially its false. */}
       {cartIsShown && <Cart />}
-      <Header />
+      {/* showCartHandler should be called whenever button is clicked. The button is part of the header, 
+      therefore we should probably expect to get that function -> the showCartHandler function called from
+      inside the header. For header to call function -> pass a pointer to it -> through props. */}
+      {/* Convention is to use on -> cause these are like custom events. I'm naming it onShowCart (name is
+        up to me -> point at the showCartHandler) */}
+      {/* So in header component, we recieve the onShowCart prop (which points at showCartHandler). And now 
+      I'm forwarding that pointer at that function to the onClickProp on the header cart button. */}
+      <Header onShowCart={showCartHandler} />
       <main>
         <Meals />
       </main>

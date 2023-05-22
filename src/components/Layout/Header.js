@@ -13,7 +13,13 @@ const Header = (props) => {
       {/* Sibling component 1 */}
       <header className={classes.header}>
         <h1>ReactMeals</h1>
-        <HeaderCartButton />
+        {/* Here lets expect we have an onClick prop -> but its up to me. Using this name which is the 
+        built in onClick -> because I in the end want to react to the button being clicked. */}
+        {/* But technically -> can use any name I want because I will have to write code inside of 
+        HeaderCartButton to handle this prop anyway. */}
+        {/* To this prop I want to pass a pointer to that function I'm recieving on props 
+        onShowCart here. */}
+        <HeaderCartButton onClick={props.onShowCart} />
       </header>
       {/* Sibling component 2 */}
       <div className={classes["main-image"]}>
