@@ -27,7 +27,10 @@ function App() {
 
   return (
     <Fragment>
-      <Cart />
+      {/* Wrapping Card in curly braces (to evaluate a dynamic expression) to render it conditionally */}
+      {/* Using && to render cart if cartIsShown is truthy, and not render it if its falsy */}
+      {/* Cart will go cause initially its false */}
+      {cartIsShown && <Cart />}
       <Header />
       <main>
         <Meals />
