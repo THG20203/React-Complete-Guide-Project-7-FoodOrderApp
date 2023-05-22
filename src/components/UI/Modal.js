@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+/* ReactDom needed for the create Portal method */
 import ReactDOM from "react-dom";
 
 import classes from "./Modal.module.css";
@@ -17,6 +18,8 @@ const ModalOverlay = (props) => {
   );
 };
 
+/* createPortal needs a second argument -> not just what to portal but where to portal - hence 
+portalElement const created. */
 const portalElement = document.getElementById("overlays");
 
 /* Special kind of markup -> want to use react portal for both my backdrop (behind modal overlay
@@ -26,9 +29,11 @@ with react portal. */
 place in the DOM tree */
 const Modal = (props) => {
   return (
+    /* Fragment needed -> have backdrop and overlay side by side */
     <Fragment>
       {ReactDOM.createPortal(<Backdrop />, portalElement)}
       {ReactDOM.createPortal(
+        /* props.children -> forward the content between the modal text */
         <ModalOverlay>{props.children}</ModalOverlay>,
         portalElement
       )}
